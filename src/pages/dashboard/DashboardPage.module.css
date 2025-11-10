@@ -1,0 +1,67 @@
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.dashboard__head {
+    margin-bottom: 1rem;
+}
+
+.dashboard__head h1 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.dashboard__subtitle {
+    margin-top: 0.25rem;
+    color: var(--muted);
+}
+
+.dashboard__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    grid-column: span 3;
+    min-height: 7rem;
+    padding: 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.card__wide {
+    grid-column: span 6;
+    min-height: 260px;
+}
+
+.card__medium {
+    grid-column: span 6;
+    min-height: 260px;
+}
+
+.card__head {
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.card__value {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.card__hint {
+    margin-top: 0.5rem;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.chart-placeholder {
+    height: 240px;
+}

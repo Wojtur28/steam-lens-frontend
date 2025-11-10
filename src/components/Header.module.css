@@ -1,29 +1,85 @@
 .header {
-    position: sticky; top: 0; z-index: 10;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 5rem; padding: 0 2rem;
-    background: rgba(15,17,21,.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 0 2rem;
+    background: rgba(15, 17, 21, .8);
     border-bottom: 1px solid var(--border);
 }
 
 .header__brand {
-    display: flex; align-items: center; gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .header__logo {
-    width: 4rem; height: 4rem;
+    width: 4rem;
+    height: 4rem;
     place-items: center;
-    font-weight: 700; font-size: 0.8rem;
+    font-weight: 700;
+    font-size: 0.8rem;
     border-radius: 30%;
 }
 
 .header__title {
-    font-weight: 600; letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text);
+    text-decoration: none;
+    transition: color .15s ease;
+}
+
+.header__title:hover {
+    color: var(--text);
 }
 
 .header__avatar {
-    width: 4rem; height: 4rem; border-radius: 50%;
-    border: 1px solid var(--border); cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    cursor: pointer;
     transition: opacity .2s;
 }
-.header__avatar:hover { opacity: .85; }
+
+.header__avatar:hover {
+    opacity: .85;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__link {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .15s ease;
+}
+
+.header__link:hover {
+    color: var(--text);
+}
+
+.header__linkActive {
+    color: var(--text);
+    position: relative;
+}
+
+.header__linkActive::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+}
