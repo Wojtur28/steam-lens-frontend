@@ -29,6 +29,11 @@ const resources = {
                 "card": {
                     "played": "Played: {{hours}}h",
                     "lastPlayed": "Last played: {{date}}"
+                },
+                "sort": {
+                    "title": "Title",
+                    "playtime": "Playtime",
+                    "lastPlayed": "Last Played"
                 }
             }
         }
@@ -60,6 +65,11 @@ const resources = {
                 "card": {
                     "played": "Grano: {{hours}}h",
                     "lastPlayed": "Ostatnio grano: {{date}}"
+                },
+                "sort": {
+                    "title": "Tytuł",
+                    "playtime": "Czas gry",
+                    "lastPlayed": "Ostatnio grano"
                 }
             }
         }

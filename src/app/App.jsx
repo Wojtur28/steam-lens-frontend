@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import Header from "@/components/Header.jsx";
+import Header from "@/components/header/Header.jsx";
 import {Navigate, Route, Routes} from "react-router-dom";
 import DashboardPage from "@/pages/dashboard/DashboardPage.jsx";
 import LibraryPage from "@/pages/library/LibraryPage.jsx";

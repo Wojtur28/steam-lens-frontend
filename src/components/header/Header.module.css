@@ -51,13 +51,13 @@
     opacity: .85;
 }
 
-.header__nav {
+.nav {
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
-.header__link {
+.nav__link {
     color: var(--muted);
     text-decoration: none;
     font-weight: 500;

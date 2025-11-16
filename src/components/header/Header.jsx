@@ -36,15 +36,15 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.header__brand}>
-                <img className={styles.header__logo} src="src/assets/logo.png"  alt={"Steam Leans Logo"}/>
+                <img className={styles.header__logo} src="../../assets/logo.png" alt={"Steam Leans Logo"}/>
                 <NavLink to="/" className={styles.header__title}>SteamLeans</NavLink>
             </div>
 
-            <nav className={styles.header__nav}>
-                <NavLink to="/" className={styles.header__link}>{t('header.dashboard')}</NavLink>
-                <NavLink to="/library" className={styles.header__link}>{t('header.library')}</NavLink>
-                <NavLink to="/achievement" className={styles.header__link}>{t('header.achievements')}</NavLink>
-                <NavLink to="/family" className={styles.header__link}>{t('header.family')}</NavLink>
+            <nav className={styles.nav}>
+                <NavLink to="/" className={styles.nav__link}>{t('header.dashboard')}</NavLink>
+                <NavLink to="/library" className={styles.nav__link}>{t('header.library')}</NavLink>
+                <NavLink to="/achievement" className={styles.nav__link}>{t('header.achievements')}</NavLink>
+                <NavLink to="/family" className={styles.nav__link}>{t('header.family')}</NavLink>
             </nav>
 
             <div className={styles.header__avatarContainer} ref={dropdownRef}>

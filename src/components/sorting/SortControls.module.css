@@ -1,0 +1,21 @@
+.sortControls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.sortControls button {
+    padding: 0.5rem 1rem;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.sortControls button:hover:not(:disabled) {
+    background-color: var(--border);
+}
