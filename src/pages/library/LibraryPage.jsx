@@ -126,5 +126,5 @@ export default function LibraryPage() {
 
             {paginationProps && <Pagination {...paginationProps} />}
         </section>
-    )
+    );
 }

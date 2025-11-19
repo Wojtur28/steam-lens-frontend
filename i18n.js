@@ -21,6 +21,7 @@ const resources = {
                 "subtitle": "Your game collection",
                 "loading": "Loading...",
                 "error": "Error",
+                "noGames": "No games found.",
                 "pagination": {
                     "prev": "Previous",
                     "next": "Next",
@@ -34,6 +35,52 @@ const resources = {
                     "title": "Title",
                     "playtime": "Playtime",
                     "lastPlayed": "Last Played"
+                }
+            },
+            "dashboard": {
+                "loading": "Loading data...",
+                "error": "Error loading: {{message}}",
+                "title": "Dashboard",
+                "subtitle": "Activity overview for the last 14 days",
+                "cards": {
+                    "totalPlaytime": {
+                        "title": "Total playtime (14 days)",
+                        "hint": "{{minutes}} minutes total"
+                    },
+                    "topGame": {
+                        "title": "Favorite game (14 days)",
+                        "noActivity": "No activity"
+                    },
+                    "dailyAverage": {
+                        "title": "Daily average",
+                        "hint": "Last 14 days"
+                    },
+                    "gamesCount": {
+                        "title": "Games played",
+                        "hint": "Unique games in 14 days"
+                    }
+                },
+                "charts": {
+                    "topGamesMinutes": "Top games by time (minutes)"
+                },
+                "recentGames": {
+                    "title": "Recently played games ({{count}})",
+                    "timeframe": "(in 14 days)"
+                }
+            },
+            "profile": {
+                "title": "Profile",
+                "subtitle": "Manage your profile settings and preferences",
+                "sections": {
+                    "userInfo": {
+                        "title": "User Information",
+                        "name": "Name:",
+                        "email": "Email:"
+                    },
+                    "accountSettings": {
+                        "title": "Account Settings",
+                        "description": "Change your password, manage connected accounts, and update preferences."
+                    }
                 }
             }
         }
@@ -57,6 +104,7 @@ const resources = {
                 "subtitle": "Twoja kolekcja gier",
                 "loading": "Ładowanie...",
                 "error": "Błąd",
+                "noGames": "Nie znaleziono gier.",
                 "pagination": {
                     "prev": "Poprzednia",
                     "next": "Następna",
@@ -70,6 +118,52 @@ const resources = {
                     "title": "Tytuł",
                     "playtime": "Czas gry",
                     "lastPlayed": "Ostatnio grano"
+                }
+            },
+            "dashboard": {
+                "loading": "Ładowanie danych...",
+                "error": "Błąd ładowania: {{message}}",
+                "title": "Dashboard",
+                "subtitle": "Podgląd aktywności z ostatnich 14 dni",
+                "cards": {
+                    "totalPlaytime": {
+                        "title": "Total playtime (14 dni)",
+                        "hint": "{{minutes}} minut łącznie"
+                    },
+                    "topGame": {
+                        "title": "Ulubiona gra (14 dni)",
+                        "noActivity": "Brak aktywności"
+                    },
+                    "dailyAverage": {
+                        "title": "Średnio dziennie",
+                        "hint": "Ostatnie 14 dni"
+                    },
+                    "gamesCount": {
+                        "title": "Zagranych gier",
+                        "hint": "Różnych gier w 14 dni"
+                    }
+                },
+                "charts": {
+                    "topGamesMinutes": "Top gry wg czasu (minuty)"
+                },
+                "recentGames": {
+                    "title": "Ostatnio zagrane gry ({{count}})",
+                    "timeframe": "(w 14 dni)"
+                }
+            },
+            "profile": {
+                "title": "Profil",
+                "subtitle": "Zarządzaj ustawieniami profilu i preferencjami",
+                "sections": {
+                    "userInfo": {
+                        "title": "Informacje o użytkowniku",
+                        "name": "Imię:",
+                        "email": "Email:"
+                    },
+                    "accountSettings": {
+                        "title": "Ustawienia konta",
+                        "description": "Zmień hasło, zarządzaj połączonymi kontami i aktualizuj preferencje."
+                    }
                 }
             }
         }
