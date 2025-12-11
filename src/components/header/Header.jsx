@@ -45,6 +45,7 @@ export default function Header() {
                 <NavLink to="/library" className={styles.nav__link}>{t('header.library')}</NavLink>
                 <NavLink to="/achievement" className={styles.nav__link}>{t('header.achievements')}</NavLink>
                 <NavLink to="/family" className={styles.nav__link}>{t('header.family')}</NavLink>
+                <NavLink to="/settings" className={styles.nav__link}>{t('header.settings')}</NavLink>
             </nav>
 
             <div className={styles.header__avatarContainer} ref={dropdownRef}>
