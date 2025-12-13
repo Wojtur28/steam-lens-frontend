@@ -54,45 +54,54 @@ export default function FamilyPage() {
 
             <div className={styles.family__grid}>
                 {apps.map((app) => (
-                    <div key={app.appid} className={styles.card}>
-                        <div className={styles.card__image}>
-                            <img
-                                // Używamy capsule_filename z API jeśli jest, lub standardowego URL Steam
-                                src={app.capsule_filename
-                                    ? `https://cdn.akamai.steamstatic.com/steam/apps/${app.appid}/${app.capsule_filename}`
-                                    : `https://cdn.akamai.steamstatic.com/steam/apps/${app.appid}/header.jpg`}
-                                alt={app.name}
-                                onError={handleImageError}
-                                loading="lazy"
-                            />
-                        </div>
+                    <a
+                        key={app.appid}
+                        href={`https://store.steampowered.com/app/${app.appid}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.cardLink} // Optional: Add a class for styling the link
+                    >
+                        <div className={styles.card}>
+                            <div className={styles.card__image}>
+                                <img
+                                    // Używamy capsule_filename z API jeśli jest, lub standardowego URL Steam
+                                    src={app.capsule_filename
+                                        ? `https://cdn.akamai.steamstatic.com/steam/apps/${app.appid}/${app.capsule_filename}`
+                                        : `https://cdn.akamai.steamstatic.com/steam/apps/${app.appid}/header.jpg`}
+                                    alt={app.name}
+                                    onError={handleImageError}
+                                    loading="lazy"
+                                />
+                            </div>
 
-                        <div className={styles.card__content}>
-                            <div className={styles.card__title}>{app.name}</div>
+                            <div className={styles.card__content}>
+                                <div className={styles.card__title}>{app.name}</div>
 
-                            <div className={styles.card__footer}>
-                                <div className={styles.owners}>
-                                    <span className={styles.owners__label}>{t('family.owners', 'Właściciele:')}</span>
-                                    <div className={styles.owners__list}>
-                                        {app.owner_steamids.map((ownerId) => {
-                                            const owner = ownersMap[ownerId];
-                                            if (!owner) return null;
+                                <div className={styles.card__footer}>
+                                    <div className={styles.owners}>
+                                        <span
+                                            className={styles.owners__label}>{t('family.owners', 'Właściciele:')}</span>
+                                        <div className={styles.owners__list}>
+                                            {app.owner_steamids.map((ownerId) => {
+                                                const owner = ownersMap[ownerId];
+                                                if (!owner) return null;
 
-                                            return (
-                                                <img
-                                                    key={ownerId}
-                                                    src={owner.avatar}
-                                                    alt={owner.personaname}
-                                                    title={owner.personaname}
-                                                    className={styles.ownerAvatar}
-                                                />
-                                            );
-                                        })}
+                                                return (
+                                                    <img
+                                                        key={ownerId}
+                                                        src={owner.avatar}
+                                                        alt={owner.personaname}
+                                                        title={owner.personaname}
+                                                        className={styles.ownerAvatar}
+                                                    />
+                                                );
+                                            })}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </section>

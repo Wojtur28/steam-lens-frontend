@@ -7,6 +7,7 @@ export default function SettingsPage() {
     const [formData, setFormData] = useState({
         apiKey: "",
         steamId: "",
+        familyId: "",
         accessToken: ""
     });
     const [saved, setSaved] = useState(false);
@@ -15,11 +16,13 @@ export default function SettingsPage() {
     useEffect(() => {
         const storedApiKey = localStorage.getItem("steam_api_key") || "";
         const storedSteamId = localStorage.getItem("steam_id") || "";
+        const storedFamilyId = localStorage.getItem("steam_family_id") || "";
         const storedAccessToken = localStorage.getItem("steam_access_token") || "";
 
         setFormData({
             apiKey: storedApiKey,
             steamId: storedSteamId,
+            familyId: storedFamilyId,
             accessToken: storedAccessToken
         });
     }, []);
@@ -34,6 +37,7 @@ export default function SettingsPage() {
         e.preventDefault();
         localStorage.setItem("steam_api_key", formData.apiKey);
         localStorage.setItem("steam_id", formData.steamId);
+        localStorage.setItem("steam_family_id", formData.familyId);
         localStorage.setItem("steam_access_token", formData.accessToken);
 
         setSaved(true);
@@ -63,6 +67,19 @@ export default function SettingsPage() {
                             placeholder="np. 76561198000000000"
                         />
                         <span className={styles.hint}>Nadpisuje domyślne ID z pliku .env</span>
+                    </div>
+
+                    <div className={styles.formGroup}>
+                        <label htmlFor="familyId">Family Group ID</label>
+                        <input
+                            type="text"
+                            id="familyId"
+                            name="familyId"
+                            value={formData.familyId}
+                            onChange={handleChange}
+                            placeholder="np. 12345678"
+                        />
+                        <span className={styles.hint}>ID grupy rodzinnej, potrzebne do jej pobrania.</span>
                     </div>
 
                     <div className={styles.formGroup}>

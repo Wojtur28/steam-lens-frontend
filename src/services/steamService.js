@@ -2,12 +2,16 @@ import {Game} from "@/models/game.js";
 import {apiRequest} from "@/utility/apiUtility.js";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
-const STEAM_ID = import.meta.env.VITE_STEAM_ID;
-const FAMILY_GROUP_ID = import.meta.env.VITE_FAMILY_GROUP_ID;
 
 function getSteamId() {
     const localId = localStorage.getItem("steam_id");
     const envId = import.meta.env.VITE_STEAM_ID;
+    return localId || envId;
+}
+
+function getFamilyId() {
+    const localId = localStorage.getItem("steam_family_id");
+    const envId = import.meta.env.VITE_FAMILY_GROUP_ID;
     return localId || envId;
 }
 
@@ -36,13 +40,33 @@ export async function fetchDashboardSummary() {
     return response.data;
 }
 
+export async function getMyFamilyGroup() {
+    const steamId = getSteamId();
+    if (!steamId) throw new Error("Brak Steam ID.");
+
+    const url = `${API_BASE_URL}/api/steam/family/my-group?steamId=${steamId}`;
+    const response = await apiRequest(url);
+    return response.data;
+}
+
+export async function fetchFamilyGroupDetails() {
+    const familyGroupId = getFamilyId();
+    if (!familyGroupId) throw new Error("Brak Family Group ID.");
+
+    const url = `${API_BASE_URL}/api/steam/family/details/${familyGroupId}`;
+    const response = await apiRequest(url);
+    return response.data;
+}
+
 export async function fetchSharedLibrary() {
     const steamId = getSteamId();
-    // Tutaj Family Group ID też można by wynieść do settings, na razie zostawiam ENV
-    const familyGroupId = import.meta.env.VITE_FAMILY_GROUP_ID;
+    const familyGroupId = getFamilyId();
 
     if (!familyGroupId) {
-        throw new Error("Brak FAMILY_GROUP_ID w konfiguracji (.env)");
+        throw new Error("Brak FAMILY_GROUP_ID w konfiguracji (.env lub w ustawieniach).");
+    }
+    if (!steamId) {
+        throw new Error("Brak Steam ID w konfiguracji (.env lub w ustawieniach).");
     }
 
     // apiRequest automatycznie doda nagłówek X-Steam-Access-Token z localStorage
