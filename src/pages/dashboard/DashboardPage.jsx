@@ -26,12 +26,11 @@ export default function DashboardPage() {
 
     const {
         data: summary,
-        error,
         loading
     } = useData(fetchDashboardSummary, []);
 
     if (loading) return <section className={styles.dashboard}>{t('dashboard.loading')}</section>;
-    if (error) return <section className={styles.dashboard}>{t('dashboard.error', {message: error.message})}</section>;
+    if (!summary) return null;
 
     const totalPlaytimeHours = summary?.total_last_2weeks_playtime?.total_last_2weeks_playtime_hours;
     const totalPlaytimeMinutes = summary?.total_last_2weeks_playtime?.total_last_2weeks_playtime_minutes;

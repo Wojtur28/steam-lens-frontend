@@ -82,6 +82,35 @@ const resources = {
                         "description": "Change your password, manage connected accounts, and update preferences."
                     }
                 }
+            },
+            "settings": {
+                "title": "Settings"
+            },
+            "family": {
+                "title": "Family Library",
+                "subtitle": "Shared game collection",
+                "loading": "Loading...",
+                "error": "Error:",
+                "totalValue": "Library Value",
+                "totalGames": "Number of Games"
+            },
+            "errors": {
+                "title": "Error",
+                "close": "Close",
+                "api": {
+                    "parseError": "Error parsing response (HTTP {{status}} {{statusText}}). Server returned unexpected format. Response start: \"{{text}}...\"",
+                    "unknownError": "An unknown API error occurred"
+                },
+                "steamId": {
+                    "missing": "Steam ID is missing. Please set it in Settings.",
+                    "missingEnv": "Steam ID is missing. Please set it in .env file or in Settings."
+                },
+                "familyId": {
+                    "missing": "Family Group ID is missing. Please set it in Settings.",
+                    "missingConfig": "FAMILY_GROUP_ID is missing in configuration."
+                },
+                "network": "Network error. Please check your connection.",
+                "unauthorized": "Unauthorized. Please check your access token."
             }
         }
     },
@@ -165,6 +194,35 @@ const resources = {
                         "description": "Zmień hasło, zarządzaj połączonymi kontami i aktualizuj preferencje."
                     }
                 }
+            },
+            "settings": {
+                "title": "Ustawienia"
+            },
+            "family": {
+                "title": "Biblioteka Rodzinna",
+                "subtitle": "Współdzielona kolekcja gier",
+                "loading": "Ładowanie...",
+                "error": "Błąd:",
+                "totalValue": "Wartość Biblioteki",
+                "totalGames": "Liczba Gier"
+            },
+            "errors": {
+                "title": "Błąd",
+                "close": "Zamknij",
+                "api": {
+                    "parseError": "Błąd w parsowaniu odpowiedzi (HTTP {{status}} {{statusText}}). Serwer zwrócił nieoczekiwany format. Początek odpowiedzi: \"{{text}}...\"",
+                    "unknownError": "Wystąpił nieznany błąd API"
+                },
+                "steamId": {
+                    "missing": "Brak Steam ID. Ustaw je w Ustawieniach.",
+                    "missingEnv": "Brak Steam ID. Ustaw je w pliku .env lub w Ustawieniach."
+                },
+                "familyId": {
+                    "missing": "Brak Family Group ID. Ustaw je w Ustawieniach.",
+                    "missingConfig": "Brak FAMILY_GROUP_ID w konfiguracji."
+                },
+                "network": "Błąd sieci. Sprawdź swoje połączenie.",
+                "unauthorized": "Brak autoryzacji. Sprawdź swój token dostępu."
             }
         }
     }

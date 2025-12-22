@@ -9,6 +9,7 @@
     padding: 0 2rem;
     background: rgba(15, 17, 21, .8);
     border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
 }
 
 .header__brand {
@@ -62,6 +63,30 @@
     text-decoration: none;
     font-weight: 500;
     transition: color .15s ease;
+}
+
+.nav__link:hover {
+    color: var(--text);
+}
+
+.nav__link.active {
+    color: var(--text);
+}
+
+.nav__settingsButton {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: color .15s ease;
+    padding: 0;
+}
+
+.nav__settingsButton:hover {
+    color: var(--text);
 }
 
 .header__link:hover {
@@ -134,4 +159,99 @@
 .header__dropdownButton:hover {
     color: #ff4d4d;
     background-color: rgba(255, 107, 107, 0.1);
+}
+
+/* Settings Modal */
+.settingsModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+}
+
+.settingsModal__content {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    min-width: 500px;
+    max-width: 600px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.settingsModal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.settingsModal__header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+.settingsModal__close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settingsModal__close:hover {
+    color: var(--text);
+}
+
+.settingsModal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.settingsModal__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.settingsModal__field label {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.settingsModal__field input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.settingsModal__field input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.settingsModal__field input::placeholder {
+    color: var(--muted);
 }

@@ -20,10 +20,92 @@
     color: var(--muted);
 }
 
+.summary {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.summaryCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.summaryCard h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.summaryValue {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* --- LEGENDA WŁAŚCICIELI --- */
+.ownersLegend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ownerChip {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    gap: 0.75rem;
+}
+
+.ownerChip img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.ownerInfo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.ownerName {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.ownerValue {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* --- GRID I KARTY --- */
 .family__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .card {
@@ -33,12 +115,13 @@
     padding: 0.75rem;
     display: flex;
     flex-direction: column;
+    height: 100%;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
     overflow: hidden;
 }
 
-.card:hover {
+.cardLink:hover .card {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border-color: var(--accent);
@@ -46,17 +129,31 @@
 
 .card__image {
     width: 100%;
-    aspect-ratio: 16/9; /* Można zmienić na 2/3 dla okładek pionowych */
+    aspect-ratio: 16/9;
     border-radius: 6px;
     overflow: hidden;
     margin-bottom: 1rem;
     background-color: rgba(0, 0, 0, 0.2);
+    position: relative; /* Dla priceTag */
 }
 
 .card__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* --- CENA NA OBRAZKU --- */
+.priceTag {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-top-left-radius: 6px;
 }
 
 .card__content {
@@ -70,26 +167,20 @@
     font-weight: 600;
     font-size: 1.1rem;
     color: var(--text);
-    margin-bottom: 1rem;
-    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
 }
 
 .card__footer {
     margin-top: auto;
-    border-top: 1px solid var(--border);
     padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
 }
 
 .owners {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-}
-
-.owners__label {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-right: 0.25rem;
+    justify-content: flex-end; /* Awatary do prawej */
 }
 
 .owners__list {
@@ -98,13 +189,12 @@
 }
 
 .ownerAvatar {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     border: 2px solid var(--card);
-    margin-left: -10px; /* Efekt nakładania się */
+    margin-left: -8px;
     transition: transform 0.2s ease, z-index 0.2s;
-    cursor: help;
 }
 
 .ownerAvatar:first-child {
@@ -126,17 +216,4 @@
 
 .error {
     color: #ff6b6b;
-}
-
-.cardLink {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    cursor: pointer;
-}
-
-.cardLink:hover .card {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    border-color: var(--accent);
 }

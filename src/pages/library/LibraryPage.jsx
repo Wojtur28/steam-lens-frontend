@@ -40,7 +40,7 @@ const LibraryGrid = ({games, t, onImageError}) => (
 export default function LibraryPage() {
     const {t} = useTranslation();
     const pageSize = 12;
-    const {games, loading, error, meta, currentPage, setCurrentPage} = useSteamGames(pageSize);
+    const {games, loading, meta, currentPage, setCurrentPage} = useSteamGames(pageSize);
 
     const [sortConfig, setSortConfig] = useState({key: 'name', direction: 'asc'});
 
@@ -98,9 +98,6 @@ export default function LibraryPage() {
     const renderContent = () => {
         if (loading) {
             return <p>{t('library.loading')}</p>;
-        }
-        if (error) {
-            return <p>{t('library.error')}: {error}</p>;
         }
         if (sortedGames.length === 0) {
             return <p>{t('library.noGames')}</p>;
